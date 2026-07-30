@@ -18,8 +18,8 @@ const intros = [
 
   try {
     const intro = intros[Math.floor(Math.random() * intros.length)];
-    const response = await axios.get("");
-    await respond({ text: `Cat Fact:\n${response.data.fact}` });
+    const response = await axios.get("https://catfact.ninja/fact");
+    await respond({ text:  `${intro}\n\n\n${response.data.fact}` });
   } catch (err) {
     await respond({ text: "Failed to fetch a cat fact." });
   }
@@ -35,20 +35,20 @@ app.command("/gman-fact", async ({ command, ack, respond }) => {
   await ack();
 
   const facts = [
-    "The Civil Protection mask is based on the soviet PMG mask.",
-    "Counter-Strike began as Half-Life: Counter-Strike.",
+    "The Civil Protection mask is based on the Soviet PMG gas mask.",
+    "Counter-Strike began as a Half-Life mod.",
     "Half-Life was built on a heavily modified Quake engine.",
-    "Gordon Freeman was originally Ivan The Space Biker."
+    "Gordon Freeman was originally named Ivan the Space Biker during early development."
   ];
 
   const randomFact = facts[Math.floor(Math.random() * facts.length)];
 
-  const latency = Date.now() - start;
-
   await respond({
-  
+    text: `Fact:\n${randomFact}`
   });
 });
+
+app.
 app.command("/gman-help", async ({ ack, respond }) => {
   await ack();
   await respond({
