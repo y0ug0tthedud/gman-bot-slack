@@ -48,7 +48,6 @@ app.command("/gman-fact", async ({ command, ack, respond }) => {
   });
 });
 
-app.
 app.command("/gman-help", async ({ ack, respond }) => {
   await ack();
   await respond({
