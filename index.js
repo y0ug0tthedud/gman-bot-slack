@@ -55,7 +55,8 @@ app.command("/gman-help", async ({ ack, respond }) => {
 `Available Commands:
 /gman-ping - Check bot latency
 /gman-catfact - Get a cat fact
-/gman-fact - Get a random fact about The half-life franchise`
+/gman-fact - Get a random fact about The half-life franchise
+It's time to choose.`
   });
 });
 (async () => {
